@@ -1,5 +1,0 @@
-{
-	"operator":             { "type": "bool",         "writable":   true },
-	"silenced":             { "type": "bool",         "writable":   true },
-	"since":                { "type": "int" }
-}
