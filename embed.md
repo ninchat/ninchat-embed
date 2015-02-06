@@ -147,6 +147,11 @@ Default value is `false` or `null` unless otherwise spesified.
 
 	Show debug data in console.
 	
+- `dialogueUserId` : string
+
+	Like channelId, but open a dialogue with the specified user instead of
+	joining a channel.
+
 - `domain` : string, defaults to the parent site hostname
 
 	Used to identify user credentials if `remember` is set to `true`. If multiple chats are embedded on the same page you may need to override this with e.g. `expert.domain.tld` and `guest.domain.tld`.
