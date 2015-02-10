@@ -272,6 +272,14 @@ Change to another channel, will join/follow if necessary.
 Close floating chat window and send delete_user, same as clicking &times;.
 
 
+### `Ninchat.dialogue`
+
+- `userId` : string
+- `containerId` : string (optional)
+
+Open a private conversation with the specified user.
+
+
 ### `Ninchat.embedInit`
 
 - `_options` : object
