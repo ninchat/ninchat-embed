@@ -44,13 +44,13 @@ Example: Chat room
 
 Load the JavaScript and add the chat room to pre-defined element on page:
 
-	<div id="ninchat-chatroom" style="width: 300px; height: 400px;"></div>
+	<div id="ninchat-iframe" style="width: 300px; height: 400px;"></div>
     
 	<script type="text/javascript">
 		window.NinchatAsyncInit = function() {
 			window.Ninchat.embedInit({
 				channelId: 'YOUR_CHANNEL_ID',
-				containerId: 'ninchat-chatroom'
+				containerId: 'ninchat-iframe'
 			});
 		};
 
