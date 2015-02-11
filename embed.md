@@ -156,6 +156,10 @@ Default value is `false` or `null` unless otherwise spesified.
 
 	Used to identify user credentials if `remember` is set to `true`. If multiple chats are embedded on the same page you may need to override this with e.g. `expert.domain.tld` and `guest.domain.tld`.
 	
+- `guestOnlyLogin` : boolean
+
+	Disable login with existing Ninchat or Facebook user accounts.
+
 - `hideCommand` : boolean
 
 	Hide the input field.
