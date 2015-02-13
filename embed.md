@@ -168,6 +168,11 @@ Default value is `false` or `null` unless otherwise spesified.
 
 	Hide the channel/private conversation title bar.
 	
+- `inQueueText` : string
+
+	Shown in place of `motd` after the user has entered a customer service
+	queue.  Defaults to `motd`.  May contain HTML.
+
 - `language` : string
 
 	Change the client language, available values are `fi` for Finnish and `en` for English (default).
