@@ -123,10 +123,16 @@ Default value is `false` or `null` unless otherwise spesified.
 
 	The realm id used for customer service queues.
 	
-- `audienceQueues` : string
+- `audienceQueues` : string array
 
 	Comma separated list of visible customer service queues, list all if not set.
-	
+
+- `audienceAutoQueue` : string
+
+	Go to this queue automatically, if it's open.  Otherwise the list of open
+    queues is shown.  If you don't want to show other queues, set
+    audienceQueues to a list containing only this queue, and set noQueuesText.
+
 - `audienceRating` : boolean
 
 	Enable customer service satisfaction rateing.
