@@ -309,6 +309,16 @@ Initialize embedded chat, see available options in [Initialization options](#ini
 Re-initialize the iframe, see available options in [Initialization options](#initialization-options). Can be used for example to login with another user.
 
 
+### `Ninchat.metadata`
+
+- `data` : object
+- `fold` : boolean (optional)
+
+The data object contains arbitrary string keys mapped to string values.  If
+fold is true, the values override previous values of the keys.  Fold is false
+by default.
+
+
 ### `Ninchat.rename`
 
 - `name` : string
