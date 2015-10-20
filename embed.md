@@ -187,6 +187,11 @@ Default value is `false` or `null` unless otherwise spesified.
 
 	Force long poll connection instead of websocket.
 
+- `masterKeyType` : string
+
+	Specifies the type of the signature/token used in `userMasterSign`;
+	"ninchat" or "jwt".
+
 - `motd` : string
 
 	Message of the day text displayed below the customer service queues. May contain HTML.
@@ -224,6 +229,11 @@ Default value is `false` or `null` unless otherwise spesified.
 
 	User id for logging in a known user, `userAuth` is required if used.
 	
+- `userMasterSign` : string
+
+	A cryptographic signature/token used when creating session.  May be used
+	e.g. for login authorization.
+
 - `userName` : string
 
 	Name to be used in chat. The name will be prompted when trying to send first message if not given.
