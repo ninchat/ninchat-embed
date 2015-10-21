@@ -145,6 +145,11 @@ Default value is `false` or `null` unless otherwise spesified.
 
 	The channel id where we land after loading chat.
 
+- `channelMasterSign` : string
+
+	A cryptographic signature/token used when joining channels.  May be used
+	e.g. to join a non-public channel.
+
 - `cookiePrefix` : string, default: `ninchat_`
 
 	Prefix used when storing chat state on client browser. Mainly for customer service, saves to chat popup horizontal position and open/close state.
@@ -189,8 +194,8 @@ Default value is `false` or `null` unless otherwise spesified.
 
 - `masterKeyType` : string
 
-	Specifies the type of the signature/token used in `userMasterSign`;
-	"ninchat" or "jwt".
+	Specifies the type of the signature/token used in `userMasterSign` and
+	`channelMasterSign`; "ninchat" or "jwt".
 
 - `motd` : string
 
