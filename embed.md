@@ -256,15 +256,47 @@ Default value is `false` or `null` unless otherwise spesified.
 
 - `dock` : string, default: `bottom`
 
-	Dock floating chat window to `top` or `bottom`.
+	Dock floating chat window to `top`, `left`, `right`, `ball` or `bottom`.
 
 - `height` : string, default: `400px`
 
 	Customer service chat window height.
+	
+- `promoBubbleBackground` : string, default: `black`
+
+	Background color for the customer care chat promo bubble.
+	
+- `promoBubbleTextColor` : string, default: `white`
+
+	Text color for the customer care chat promo bubble.
+	
+- `promoBubbleText` : string
+
+	Text for the customer care chat promo bubble.
 
 - `responsive` : boolean|number
 
 	If true (or custom breakpoint pixel value), container will take max width (or height) if screen width below 800 pixels.
+	
+- `sidebarBackground` : string, default: `black`
+
+	Color for the sidebar background, when floating chat window is docked to `left` or `right`.
+	
+- `sidebarHeight` : string, default: `140px`
+
+	Sidebar height, when floating chat window is docked to `left` or `right`.
+	
+- `sidebarTextColor` : string, default: `white`
+
+	Color for the sidebar text, when floating chat window is docked to `left` or `right`.
+	
+- `sidebarWidth` : string, default: `34px`
+
+	Sidebar width, when floating chat window is docked to `left` or `right`.
+	
+- `sidebarText` : string, default: `Audience`
+
+	Text for the sidebar, when floating chat window is docked to `left` or `right`.
 
 - `titleBackground` : string, default: `black`
 
@@ -277,6 +309,14 @@ Default value is `false` or `null` unless otherwise spesified.
 - `titleTextColor` : string, default: `white`
 
 	Color for the title bar text.
+
+- `titleHeight` : string, default: `Audience`
+
+	Title bar height.
+	
+- `titleWidth` : string, default: `white`
+
+	Title bar width.
 
 - `width` : string, default: `240px`
 
