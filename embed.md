@@ -350,6 +350,18 @@ Close floating chat window and send delete_user, same as clicking &times;.
 Open a private conversation with the specified user.
 
 
+### `Ninchat.earlyMetadata`
+
+- `data` : object
+
+Add or replace parts of the initial `audienceMetadata` object.  Returns a
+boolean; true is returned if Ninchat hasn't been started yet (i.e. the initial
+metadata could still be modified).
+
+The [`Ninchat.metadata`](#ninchatmetadata) function may be used to send
+metadata to the chat after Ninchat has already been started.
+
+
 ### `Ninchat.embedInit`
 
 - `_options` : object
@@ -369,9 +381,15 @@ Re-initialize the iframe, see available options in [Initialization options](#ini
 - `data` : object
 - `fold` : boolean (optional)
 
+Send audience metadata message to the customer care agent.  The messages may be
+interleaved with other messages in the chat.
+
 The data object contains arbitrary string keys mapped to string values.  If
 fold is true, the values override previous values of the keys.  Fold is false
 by default.
+
+As opposed to [`Ninchat.earlyMetadata`](#ninchatearlymetadata), this function
+works at any time.
 
 
 ### `Ninchat.rename`
