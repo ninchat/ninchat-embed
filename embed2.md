@@ -177,16 +177,20 @@ Default value is `false` or `null` unless otherwise spesified.
 ### Top level options
 
 - `containerId` : string, default: `ninchat-iframe`
+	
 	DOM element id for the chat container. If using the default value you don't need to give `containerId` in the public API calls.
 
 - `description`: string
-    Descriptive text of the config file displayed in the site config list in "Sites" view under Organization settings.
+    
+	Descriptive text of the config file displayed in the site config list in "Sites" view under Organization settings.
 
 - `default`: object
-    Default environment. All config options are placed under an environment in the config
+    
+	Default environment. All config options are placed under an environment in the config
 
 - `responsive`: object
-    Pseudo-environment for responsive chat window
+    
+	Pseudo-environment for responsive chat window
 
     ```json
     {
@@ -204,46 +208,60 @@ Default value is `false` or `null` unless otherwise spesified.
 ### Generic options
 
 - `autoStart` : boolean, default: `true`
+	
 	Start chat automatically. If set to `false` you must use [`Ninchat.start()`](#ninchat-start) to start chat, can be used to start customer service chat on demand.
 	
 - `cookiePrefix` : string, default: `ninchat_`
+	
 	Prefix used when storing chat state on client browser. Mainly for customer service, saves to chat popup horizontal position and open/close state.
 	
 - `css` : string
+	
 	URL for custom CSS file included in the chat.
 
 - `debug` : boolean
+	
 	Show debug data in console.
 
 - `domain` : string, defaults to the parent site hostname
+	
 	Used to identify user credentials if `remember` is set to `true`. If multiple chats are embedded on the same page you may need to override this with e.g. `expert.domain.tld` and `guest.domain.tld`.
 
 - `externalStyles` : array
-    A list containing https URLs to external CSS files loaded to the window hosting embedded chat  
+    
+	A list containing https URLs to external CSS files loaded to the window hosting embedded chat  
 
 - `guestOnlyLogin` : boolean
+	
 	Disable login with existing Ninchat or Facebook user accounts.
 
 - `hideCommand` : boolean
+	
 	Hide the input field.
 	
 - `hideTitle` : boolean, default: `true`
+	
 	Hide the channel/private conversation title bar.
 
 - `language` : string
+	
 	Change the client language, available values are `fi` for Finnish and `en` for English (default).
 
 - `masterKeyType` : string
+	
 	Specifies the type of the signature/token used in `userMasterSign` and
 	`channelMasterSign`; "ninchat" or "jwt".
 
 - `remember` : boolean, default: `true`
+	
 	Remember the user after page reload.
 
 - `reverseBacklog` : boolean
+	
 	Backlog in reverse order with the input field at top.
 
 - `translations` : object
+	
 	Over-ride translations, e.g.:
 		{
 			"Join audience queue {{audienceQueue.queue_attrs.name}}": "Join {{audienceQueue.queue_attrs.name}}",
@@ -251,63 +269,79 @@ Default value is `false` or `null` unless otherwise spesified.
 		}
 		
 - `userAuth` : string
+	
 	User authentication code for logging in a known user, `userId` is required if used.
 	
 - `userId` : string
+	
 	User id for logging in a known user, `userAuth` is required if used.
 	
 - `userMasterSign` : string
+	
 	A cryptographic signature/token used when creating session.  May be used
 	e.g. for login authorization.
 
 - `userName` : string
+	
 	Name to be used in chat. The name will be prompted when trying to send first message if not given.
 
 - `window` : object
-    Chat window UI configuration.
+    
+	Chat window UI configuration.
 
 ### Channel embed specific options
 
 - `channelId` : string
-    The channel id where we land after loading chat.
+    
+	The channel id where we land after loading chat.
 
 - `channelMasterSign` : string
+	
 	A cryptographic signature/token used when joining channels.  May be used
 	e.g. to join a non-public channel.
 
 ### Private conversation (=dialogue) embed specific options
 	
 - `dialogueUserId` : string
+	
 	Like channelId, but open a dialogue with the specified user instead of
 	joining a channel.
 
 ### Customer service (=audience) embed specific options
 	
 - `audienceRealmId` : string
+	
 	The realm id used for customer service queues.
 	
 - `audienceQueues` : string array
+	
 	Comma separated list of visible customer service queues, list all if not set.
 
 - `audienceAutoQueue` : string
+	
 	Go to this queue automatically, if it's open.  Otherwise the list of open
     queues is shown.  If you don't want to show other queues, set
     audienceQueues to a list containing only this queue, and set noQueuesText.
 
 - `audienceRating` : boolean
+	
 	Enable customer service satisfaction rating.
 
 - `audienceMetadata` : object
+	
 	Arbitrary strings to be displayed to the customer service agent at the start of the dialogue.
 
 - `inQueueText` : string
+	
 	Shown in place of `motd` after the user has entered a customer service
 	queue.  Defaults to `motd`.  May contain HTML.
 
 - `motd` : string
+	
 	Message of the day text displayed below the customer service queues. May contain HTML.
 	
 - `noQueuesText` : string
+	
 	Text displayed when no open customer service queues are available.
 
 
