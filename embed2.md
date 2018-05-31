@@ -436,4 +436,20 @@ Start chat if `autoStart` is set to `false`.
 Toggle floating window open state.
 
 
+Configuration examples
+======================
+
+Bare minumum customer service chat
+----------------------------------
+
+```json
+{
+  "description": "Bare minumum customer service chat",
+  "default": {
+	"audienceQueues": [ QUEUE_ID_HERE ],
+	"audienceRealmId": REALM_ID_HERE
+  }
+}
+```
+
 This document is subject to changes.
