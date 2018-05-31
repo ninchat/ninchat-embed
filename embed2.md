@@ -287,7 +287,7 @@ Default value is `false` or `null` unless otherwise spesified.
 
 - `window` : object
     
-	Chat window UI configuration.
+	Chat window UI configuration. See "Window configuration"
 
 ### Channel embed specific options
 
@@ -343,6 +343,55 @@ Default value is `false` or `null` unless otherwise spesified.
 - `noQueuesText` : string
 	
 	Text displayed when no open customer service queues are available.
+
+### Window configuration
+
+When Ninchat is embedded in a default container, a floating chat window is automatically rendered. Window configuration allows customization of different aspects of the chat window.
+
+Chat window has following possible states:
+
+- `hidden` Window is not visible at all
+- `minimized` Only title bar of the window is visible
+- `open` Window is open and visible
+- `full` Window is open and its height is 100%
+
+Window configuration is located under `window` in each environment and has the following options:
+
+- `ball` : object
+
+	Configuration for the view when `dock` is set to `ball`.
+
+- `dock` : string, default: `bottom`
+
+	Determines how window is docked. Available options are `ball`, `bottom`, `left`, `right` or `top`.
+
+- `dockOffset` : string, default: `0px 10px`
+
+	Offset of the chat window. `0px 10px` would mean the window is placed `0px` away from bottom and `10px` away from right when docked to bottom.
+
+- `initialState` : string, default: `minimized`
+
+	Initial state of the window.
+
+- `modes` : object
+
+	Configuration for different window modes. Available keys are `default`, `open` and `full`.
+
+- `promobubble` : object
+
+	Configuration for a bubble shown next to chat window promoting the chat.
+
+- `responsive` : boolean|integer, default: `true`
+
+	If true (or custom breakpoint pixel value), container will have a `responsive` pseudo-environment if screen width below 800 pixels.
+
+- `sidebar` : object
+
+	Configuration for chat window "tab" when `dock` is set to `left` or `right`.
+
+- `triggers` : string array, default: `[]`
+
+	List of triggers applied to chat window.
 
 
 Public API
