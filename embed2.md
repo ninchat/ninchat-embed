@@ -495,8 +495,8 @@ Bare minumum customer service chat
 {
   "description": "Bare minumum customer service chat",
   "default": {
-	"audienceQueues": [ 'QUEUE_ID_HERE' ],
-	"audienceRealmId": 'REALM_ID_HERE'
+	"audienceQueues": [ "QUEUE_ID_HERE" ],
+	"audienceRealmId": "REALM_ID_HERE"
   }
 }
 ```
