@@ -176,6 +176,14 @@ Default value is `false` or `null` unless otherwise spesified.
 
 ### Top level options
 
+- `configKey` : string
+
+	Site config key to be used for initializing. [Read more about site config key](#site-config-key)
+
+- `configUrls` : array (optional)
+
+	List of URL addresses for self-hosted configs. [Read more about configUrls](#configurls-and-postconfigurls)
+
 - `containerId` : string, default: `ninchat-iframe`
 	
 	DOM element id for the chat container. If using the default value you don't need to give `containerId` in the public API calls.
@@ -187,6 +195,10 @@ Default value is `false` or `null` unless otherwise spesified.
 - `default`: object
     
 	Default environment. All config options are placed under an environment in the config
+
+- `postConfigUrls` : array (optional)
+
+	List of URL addresses for self-hosted configs loaded after chat is opened. [Read more about postConfigUrls](#configurls-and-postconfigurls)
 
 - `responsive`: object
     
@@ -408,8 +420,11 @@ Change to another channel, will join/follow if necessary.
 ### `Ninchat.close`
 
 - `containerId` : string (optional)
+- `forceClose` : boolean (optional)
 
-Close floating chat window and send delete_user, same as clicking &times;.
+Close floating chat window and send delete_user (if guest), same as clicking &times; or "Close chat" button. When conversation is ongoing, close confirmation is presented. When confirmed, audience rating and/or post audience questionnaire are displayed if `audienceRating` or `postAudienceQuestionnaire` are set.
+
+If `forceClose` is set to `true`, chat is closed and user is deleted: no confirmations, ratings or questionnaires are displayed. Possible scenario for using `forceClose` could be during logout process on embedding site. 
 
 
 ### `Ninchat.dialogue`
