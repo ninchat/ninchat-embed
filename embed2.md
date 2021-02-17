@@ -454,13 +454,6 @@ metadata to the chat after Ninchat has already been started.
 Initialize embedded chat, see available options in [Initialization options](#initialization-options).
 
 
-### `Ninchat.iframeInit`
-
-- `_options` : object
-
-Re-initialize the iframe, see available options in [Initialization options](#initialization-options). Can be used for example to login with another user.
-
-
 ### `Ninchat.metadata`
 
 - `data` : object
@@ -475,14 +468,6 @@ by default.
 
 As opposed to [`Ninchat.earlyMetadata`](#ninchatearlymetadata), this function
 works at any time.
-
-
-### `Ninchat.rename`
-
-- `name` : string
-- `containerId` : string (optional)
-
-Rename current user in container.
 
 
 ### `Ninchat.start`
