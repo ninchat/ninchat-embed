@@ -254,6 +254,10 @@ Default value is `false` or `null` unless otherwise spesified.
 - `hideTitle` : boolean, default: `true`
 	
 	Hide the channel/private conversation title bar.
+	
+- `hideTitlebar` : boolean, default: `true`
+	
+	Hide audience titlebar displaying agent info.
 
 - `language` : string
 	
