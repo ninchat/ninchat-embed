@@ -474,6 +474,48 @@ As opposed to [`Ninchat.earlyMetadata`](#ninchatearlymetadata), this function
 works at any time.
 
 
+### `Ninchat.off`
+
+- `eventType` : Ninchat.EVENT (optional)
+- `eventName` : eg. `Ninchat.EVENTS.AUDIENCE_STARTED` (optional) See [`Ninchat.on`](#ninchaton)
+- `callback` : function (optional)
+
+Unsubscribes from Ninchat events set using `Ninchat.on`.
+- If `callback` is not given, all listeners for events containing given `eventType` and `eventName` are removed.
+- If `eventName` is not given, all listeners for specified `eventType` are removed.
+- If no attributes are given, all listeners are removed.
+
+
+### `Ninchat.on`
+
+- `eventType` : `Ninchat.EVENT`
+- `eventName` : eg. `Ninchat.EVENTS.AUDIENCE_STARTED`
+- `callback` : function
+
+Subscribes to a Ninchat event, which when received from Ninchat, triggers a callback function.
+Ninchat.on is called inside `NinchatAsyncInit` function.
+
+	NinchatAsyncInit = function() {
+		Ninchat.on(Ninchat.EVENT, Ninchat.EVENTS.CLOSE, function(ninchatEvent) {
+			// Ninchat is closed
+		});
+	};
+	
+Callback function receives an object as an argument, containing at least two variables:
+
+- `containerId` : Chat container ID where the event was received from
+- `event` : Event type string which is useful when one callback function is used for different events
+
+Currently following events are supported
+
+- `AUDIENCE_RESUMED` : Audience is resumed eg. after window refresh
+- `AUDIENCE_STARTED` : Audience has started (customer has been picked from the queue)
+- `AUDIENCE_TRANSFERRED` : Customer has been picked from the queue after transfer
+- `CLOSE` : Ninchat is closed and iframe is removed (chat window returns to its initial state)
+- `MESSAGE_RECEIVED` : Customer has received a message. Event object contains `messageType` string specifying the exact message type received.
+- `STATE` : Ninchat window state has changes. Event object contains `state` string with one of the values: `open`, `full`, `minimized`, `hidden`
+
+
 ### `Ninchat.start`
 
 - `containerId` : string (optional)
