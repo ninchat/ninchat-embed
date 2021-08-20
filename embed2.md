@@ -272,6 +272,12 @@ Default value is `false` or `null` unless otherwise spesified.
 	
 	Backlog in reverse order with the input field at top.
 
+- `sessionKey` : string
+
+	Override domain for sessions in sessionStorage/localStorage
+	
+	By default, Ninchat sessions are stored in sessionStorage/localStorage per domain. If same domain has different chats where sessions should not be mixed, `sessionKey` option can be used to override the domain.  
+
 - `translations` : object
 	
 	Over-ride translations, e.g.:
