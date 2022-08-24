@@ -176,7 +176,7 @@ Default value is `false` or `null` unless otherwise spesified.
 
 ### Top level options
 
-- `configKey` : string
+- `configKey` : string (required if `configUrls` is not provided)
 
 	Site config key to be used for initializing. [Read more about site config key](#site-config-key)
 
@@ -494,7 +494,7 @@ Toggle floating window open state.
 Configuration examples
 ======================
 
-Bare minumum customer service chat
+Bare minimum customer service chat
 ----------------------------------
 
 ```json
