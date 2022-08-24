@@ -511,7 +511,7 @@ Combine two or more site configs across realms
 ----------------------------------------------
 
 Each site config is loosely tied to a single realm since site config must contain `audienceRealmId` and `audienceQueues` attributes.
-However, one may find themselves in a situation where they have several realms where they wish to use almost identical site config. This can be achieved without maintaining multiple similar site configs by utilizing `configUrls`. URLs in `configUrls` can be pointed to a 3rd party server eg. when someone wishes to use their own version control or CDN. In this example `configUrls` point to Ninchat server and are therefore fetched the same way as `configKey`.
+However, one may find themselves in a situation where they have several realms where they wish to use almost identical site config. This can be achieved without maintaining multiple similar site configs by utilizing `configUrls`. URLs in `configUrls` can be pointed to a 3rd party server eg. when someone wishes to use their own version control or CDN. In this example `configUrls` point to Ninchat server and are therefore fetched the same way as when `configKey` is used.
 
 The following site config is added to Realm A. It is therefore found in `https://api.ninchat.com/config/site/[REALM_A_ID]/[SITE_CONFIG_ID].json`.
 
