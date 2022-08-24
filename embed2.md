@@ -124,10 +124,10 @@ Load the JavaScript and asynchronously initialize Ninchat to a generated floatin
 
 	<script type="text/javascript">
 		window.NinchatAsyncInit = function() {
-			window.Ninchat.embedInit({
-        		configKey: 'YOUR_CONFIG_KEY'
-	        });
-        };
+				window.Ninchat.embedInit({
+				configKey: 'YOUR_CONFIG_KEY'
+			});
+		};
 
 		(function(doc) {
 			if (doc.getElementById('ninchat-js')) {
@@ -506,5 +506,96 @@ Bare minimum customer service chat
   }
 }
 ```
+
+Combine two or more site configs across realms
+----------------------------------------------
+
+Each site config is loosely tied to a single realm since site config must contain `audienceRealmId` and `audienceQueues` attributes.
+However, one may find themselves in a situation where they have several realms where they wish to use almost identical site config. This can be achieved without maintaining multiple similar site configs by utilizing `configUrls`. URLs in `configUrls` can be pointed to a 3rd party server eg. when someone wishes to use their own version control or CDN. In this example `configUrls` point to Ninchat server and are therefore fetched the same way as `configKey`.
+
+The following site config is added to Realm A. It is therefore found in `https://api.ninchat.com/config/site/[REALM_A_ID]/[SITE_CONFIG_ID].json`.
+
+```json
+{
+  "description": "Realm A configUrls base config",
+  "default": {
+    "audienceQueues": [
+      "REALM_A_QUEUE_ID"
+    ],
+    "audienceAutoQueue": "REALM_A_QUEUE_ID",
+    "audienceRealmId": "REALM_A_ID",
+    "audienceRating": true,
+    "closeConfirmText": "Close confirmation modal text",
+    "closeWindowButton": false,
+    "hideTitlebar": false,
+    "inQueueText": "Text displayed while in queue",
+    "motd": "Message of the day",
+    "noQueuesText": "None of the queues are open",
+    "sendButtonText": "Send",
+    "supportFiles": true,
+    "supportVideo": true,
+    "userName": "Customer",
+    "welcome": "Welcome to the chat"
+  }
+}
+```
+
+The following site config is added to Realm B. It is therefore found in `https://api.ninchat.com/config/site/[REALM_B_ID]/[SITE_CONFIG_ID].json`.
+
+```json
+{
+  "description": "Realm B configUrls config",
+  "default": {
+    "audienceQueues": [
+      "REALM_B_QUEUE_ID"
+    ],
+    "audienceAutoQueue": null,
+    "audienceRealmId": "REALM_B_ID",   
+    "welcome": "Realm B specific welcome to the chat text"
+  }
+}
+```
+
+We can now initialize Ninchat as in [Loading and Initialization](#loading-and-initialization), but instead of using `configKey` we use `configUrls`:
+
+```
+window.NinchatAsyncInit = function() {
+	window.Ninchat.embedInit({
+		configUrls: [
+			'https://api.ninchat.com/config/site/[REALM_A_ID]/[SITE_CONFIG_ID].json',
+			'https://api.ninchat.com/config/site/[REALM_B_ID]/[SITE_CONFIG_ID].json'
+		],
+		containerId: 'ninchat-iframe'
+	});
+};
+```
+
+After Ninchat merges configs, the final config used would look like this:
+
+```json
+{
+  "description": "Realm B configUrls config",
+  "default": {
+    "audienceQueues": [
+      "REALM_B_QUEUE_ID"
+    ],
+    "audienceAutoQueue": null,
+    "audienceRealmId": "REALM_B_ID",   
+    "audienceRating": true,
+    "closeConfirmText": "Close confirmation modal text",
+    "closeWindowButton": false,
+    "hideTitlebar": false,
+    "inQueueText": "Text displayed while in queue",
+    "motd": "Message of the day",
+    "noQueuesText": "None of the queues are open",
+    "sendButtonText": "Send",
+    "supportFiles": true,
+    "supportVideo": true,
+    "userName": "Customer",
+    "welcome": "Realm B specific welcome to the chat text"
+  }
+}
+```
+
 
 This document is subject to changes.
