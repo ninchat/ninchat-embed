@@ -35,55 +35,55 @@
 
 ## Enums
 
-[Ninchat.Event](#-events)
+[Ninchat.Event](#events)
 
-| Enum value           |
-| -------------------- |
-| ActivityCount        |
-| ContainerInitialized |
-| Error                |
-| Notification         |
-| Route                |
+| Enum value                                                  |
+| ----------------------------------------------------------- |
+| [`ActivityCount`](#ninchateventactivitycount)               |
+| [`ContainerInitialized`](#ninchateventcontainerinitialized) |
+| [`Error`](#ninchateventerror)                               |
+| [`Notification`](#ninchateventnotification)                 |
+| [`Route`](#ninchateventroute)                               |
 
 
 Ninchat.ErrorType
 
-When received event is `Ninchat.Event.Error`, 
+When received event is [`Ninchat.Event.Error`](#ninchateventerror), 
 the `error_type` property is one of the following: 
 
-| Enum value             |
-| ---------------------- |
-| ContainerNotFoundError |
-| SiteConfigFetchError   |
-| InvalidConfigKeyError  |
-| InvalidSiteConfigError |
+| Enum value               |
+| ------------------------ |
+| `ContainerNotFoundError` |
+| `SiteConfigFetchError`   |
+| `InvalidConfigKeyError`  |
+| `InvalidSiteConfigError` |
 
 
 Ninchat.NotificationType
 
-When received event is `Ninchat.Event.Notification`, 
+When received event is [`Ninchat.Event.Notification`](#ninchateventnotification), 
 the `type` property is one of the following: 
 
-| Enum value                     |
-| ------------------------------ |
-| AudienceRegistered             |
-| MessageReceivedChannel         |
-| MessageReceivedChannelAudience |
-| MessageReceivedChannelJoin     |
-| MessageReceivedDialogue        |
-| QueueUpdatedAudienceAcceptPeer |
-| QueueUpdatedAudienceRequest    |
+| Enum value                       |
+| -------------------------------- |
+| `AudienceRegistered`             |
+| `MessageReceivedChannel`         |
+| `MessageReceivedChannelAudience` |
+| `MessageReceivedChannelJoin`     |
+| `MessageReceivedDialogue`        |
+| `QueueUpdatedAudienceAcceptPeer` |
+| `QueueUpdatedAudienceRequest`    |
 
 
 Ninchat.RouteName
 
-When received event is `Ninchat.Event.Route`, 
+When received event is [`Ninchat.Event.Route`](#ninchateventroute), 
 the `route.name` property is one of the following: 
 
-| Enum value        |
-| ----------------- |
-| Channel           |
-| Else              |
+| Enum value          |
+| ------------------- |
+| `Channel`           |
+| `Else`              |
 
 ## Events
 
