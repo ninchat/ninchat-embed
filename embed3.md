@@ -132,11 +132,6 @@ the `route.name` property is one of the following:
 
 ## Events
 
-One can subscribe to Ninchat events via `on` function, eg.:
-`Ninchat.on(Ninchat.Event.Error, (data) => {console.error('Error from Ninchat', data)})`
-
-Unsubscribe happens by calling `off`
-
 Currently, the following events are supported:
 
 #### Ninchat.Event.ActivityCount
@@ -153,12 +148,14 @@ Typical use case for `ActivityCount` is to display activity as a number in host 
 `highlights` are activity which has importance based on users settings or their role.
 Eg. highlight can be a name mention or a visitor requesting an audience.
 
+
 #### Ninchat.Event.ContainerInitialized
 ```typescript
 {
     event: Ninchat.Event.ContainerInitialized
 }
 ```
+
 
 #### Ninchat.Event.Error
 ```typescript
@@ -168,12 +165,24 @@ Eg. highlight can be a name mention or a visitor requesting an audience.
 }
 ```
 
+
 #### Ninchat.Event.Notification
 ```typescript
 {
+    audio?: boolean
+    channel_name?: string
+    desktop?: boolean
     event: Ninchat.Event.Notification
+    queue_name?: string
+    realm_name?: string
+    type: Ninchat.NotificationType
+    user_name?: string
 }
 ```
+`Notification` event is emited whenever user would receive either a desktop or an audio notification 
+based on users preferences. When Ninchat is embedded, instead of firing a desktop or audio notification, 
+a `Notification` event is emited instead.
+
 
 #### Ninchat.Event.Route
 ```typescript
@@ -185,29 +194,34 @@ Eg. highlight can be a name mention or a visitor requesting an audience.
 `Route` event is emited whenever users route in Ninchat is changed. Host site can distinquish between different routes based on 
 the passed properties. `metadata` in `AudienceRoute` contains pre-whitelisted subset of audience customers metadata.
 
+
 ##### AudienceRoute
 ```typescript
 {
-    audience_id: AudienceID
-    name: 'Channel'
+    audience_id: string
+    name: Ninchat.RouteName.Channel
     metadata?: {}
     params: {
-        channel_id: ChannelID
+        channel_id: string
     }
 }
 ```
+
+
 ##### ChannelRoute
 ```typescript
 {
-    name: 'Channel'
+    name: Ninchat.RouteName.Channel
     params: {
-        channel_id: ChannelID
+        channel_id: string
     }
 }
 ```
+
+
 ##### ElseRoute
 ```typescript
 {
-    name: 'Else'
+    name: Ninchat.RouteName.Else
 }
 ```
