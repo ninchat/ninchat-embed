@@ -29,9 +29,12 @@
 ```json
 {
     "description": "Site config",
-    "default": {}
+    "default": {
+        "variant": "app"
+    }
 }
 ```
+
 
 ## Functions
 
