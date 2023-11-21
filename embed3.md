@@ -11,7 +11,7 @@
         <script>
             const Ninchat = new NinchatEmbed()
 
-            const ninchatConfig = {
+            const options = {
                 configKey: SITE_CONFIG_KEY,
                 containerId: 'ninchat-container',
             }
@@ -20,7 +20,7 @@
             Ninchat.on(Ninchat.Event.Route, (data) => {console.info('Route change from Ninchat', data)})
             Ninchat.on(Ninchat.Event.Error, (data) => {console.error('Error from Ninchat', data)})
 
-            Ninchat.init(ninchatConfig)
+            Ninchat.init(options)
         </script>
     </body>
 </html>
@@ -31,6 +31,51 @@
     "description": "Site config",
     "default": {}
 }
+```
+
+## Functions
+
+#### Ninchat.destruct
+Removes all event listeners and de-initialized Ninchat.
+
+```es6
+const onRemoveNinchat = () => {
+    Ninchat.destruct()
+}
+```
+
+#### Ninchat.init
+Initializes Ninchat, and loads it in an iframe, which is placed inside container.
+
+```es6
+const options = {
+    configKey: SITE_CONFIG_KEY,
+    containerId: 'ninchat-container',
+}
+
+Ninchat.init(options)
+```
+
+#### Ninchat.off
+Removes a NinchatEvent listener and its callback function.
+
+```es6
+const onNinchatErrorEvent = (data) => {
+    console.error('Error from Ninchat', data)
+}
+
+Ninchat.off(Ninchat.Event.Error, onNinchatErrorEvent)
+```
+
+#### Ninchat.on
+Adds a NinchatEvent listener and a callback function.
+
+```es6
+const onNinchatErrorEvent = (data) => {
+    console.error('Error from Ninchat', data)
+}
+
+Ninchat.on(Ninchat.Event.Error, onNinchatErrorEvent)
 ```
 
 ## Enums
