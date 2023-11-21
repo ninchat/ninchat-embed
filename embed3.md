@@ -33,6 +33,58 @@
 }
 ```
 
+## Enums
+
+[Ninchat.Event](#-events)
+
+| Enum value           |
+| -------------------- |
+| ActivityCount        |
+| ContainerInitialized |
+| Error                |
+| Notification         |
+| Route                |
+
+
+Ninchat.ErrorType
+
+When received event is `Ninchat.Event.Error`, 
+the `error_type` property is one of the following: 
+
+| Enum value             |
+| ---------------------- |
+| ContainerNotFoundError |
+| SiteConfigFetchError   |
+| InvalidConfigKeyError  |
+| InvalidSiteConfigError |
+
+
+Ninchat.NotificationType
+
+When received event is `Ninchat.Event.Notification`, 
+the `type` property is one of the following: 
+
+| Enum value                     |
+| ------------------------------ |
+| AudienceRegistered             |
+| MessageReceivedChannel         |
+| MessageReceivedChannelAudience |
+| MessageReceivedChannelJoin     |
+| MessageReceivedDialogue        |
+| QueueUpdatedAudienceAcceptPeer |
+| QueueUpdatedAudienceRequest    |
+
+
+Ninchat.RouteName
+
+When received event is `Ninchat.Event.Route`, 
+the `route.name` property is one of the following: 
+
+| Enum value        |
+| ----------------- |
+| Channel           |
+| Else              |
+
 ## Events
 
 One can subscribe to Ninchat events via `on` function, eg.:
