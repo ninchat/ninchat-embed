@@ -35,7 +35,7 @@
 
 ## Enums
 
-[Ninchat.Event](#events)
+#### [Ninchat.Event](#events)
 
 | Enum value                                                  |
 | ----------------------------------------------------------- |
@@ -46,7 +46,7 @@
 | [`Route`](#ninchateventroute)                               |
 
 
-Ninchat.ErrorType
+#### Ninchat.ErrorType
 
 When received event is [`Ninchat.Event.Error`](#ninchateventerror), 
 the `error_type` property is one of the following: 
@@ -59,7 +59,7 @@ the `error_type` property is one of the following:
 | `InvalidSiteConfigError` |
 
 
-Ninchat.NotificationType
+#### Ninchat.NotificationType
 
 When received event is [`Ninchat.Event.Notification`](#ninchateventnotification), 
 the `type` property is one of the following: 
@@ -75,7 +75,7 @@ the `type` property is one of the following:
 | `QueueUpdatedAudienceRequest`    |
 
 
-Ninchat.RouteName
+#### Ninchat.RouteName
 
 When received event is [`Ninchat.Event.Route`](#ninchateventroute), 
 the `route.name` property is one of the following: 
