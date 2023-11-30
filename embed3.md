@@ -272,3 +272,24 @@ Example: secure metadata containing following `shared` field..
     name: Ninchat.RouteName.Else
 }
 ```
+
+## Examples
+
+### SSO
+
+```es6
+const options = {
+    config: {
+        default: {
+            sso: {
+                email: EMAIL_ADDRESS,
+                type: 'email',
+            }
+        },
+    },
+    configKey: SITE_CONFIG_KEY,
+    containerId: 'ninchat-container',
+}
+
+Ninchat.init(options)
+```
