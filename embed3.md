@@ -35,6 +35,17 @@
 }
 ```
 
+## Init options
+
+| Key                | Type              | Description                                                                          |
+| :----------------- | :---------------- | :----------------------------------------------------------------------------------- |
+| `audienceMetadata` | object (optional) | Audience metadata passed to the expert.                                              |
+| `config`           | object (optional) | Config used to override subset of the keys obtained via configKey and others.        |
+| `configKey`        | string            | Site config key to be used for initializing.                                         |
+| `configUrls`       | array (optional)  | List of URL addresses for self-hosted configs.                                       |
+| `containerId`      | string            | DOM element id for where the chat container is placed.                               |
+| `postConfigUrls`   | array (optional)  | List of URL addresses for self-hosted configs loaded via POST request.               |
+| `environment`      | array (optional)  | List of environment keys. 'default' is always used, and can be omited.               |
 
 ## Functions
 
