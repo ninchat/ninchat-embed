@@ -214,13 +214,46 @@ the passed properties. `metadata` in `AudienceRoute` contains pre-whitelisted su
 {
     audience_id: string
     name: Ninchat.RouteName.Channel
-    metadata?: {}
+    metadata?: []
     params: {
         channel_id: string
     }
 }
 ```
 
+`metadata` array contains secure metadata which is exposed to the parent on purpose. Array is used here, since in conversation can be multiple users with metadata. 
+
+⚠️ The array is shuffled to prevent misconceptions that index 0 would contain specific users metadata. Since the array is in random order, if there is a need to distinguish between users, an identifying field needs to be added while generating secure metadata.
+
+
+Example: secure metadata containing following `shared` field..
+```typescript
+{
+    shared: {
+        data: {
+            CustomerID: 123,
+            CustomerName: 'Kathryn Janeway' 
+        },
+        parent: [HOST_SITE_ORIGIN],
+    }
+}
+```
+..would lead to a following AudienceRoute event:
+```typescript
+{
+    audience_id: string
+    name: Ninchat.RouteName.Channel
+    metadata?: [
+        {
+            CustomerID: 123,
+            CustomerName: 'Kathryn Janeway'
+        }
+    ],
+    params: {
+        channel_id: string
+    }
+}
+```
 
 ##### ChannelRoute
 ```typescript
